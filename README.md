@@ -4,6 +4,8 @@
 
 It's a pet marketplace that serves as a convenient and efficient marketplace for pet enthusiasts. Whether you're a provider offering pet services or a customer in search of the perfect pet companion, Pet Central connects you with the right people and resources.
 
+<img src="./assets/overview.png" />
+
 ## Features
 
 With Pet Central, you can easily navigate through a variety of pet-related services, including pet adoption, pet sell, and pet supplies sell, all while facilitating seamless communication between providers and customers.
@@ -27,6 +29,10 @@ With Pet Central, you can easily navigate through a variety of pet-related servi
 -  Node Js minimum version 16
 -  Yarn minimum version 1.22.19
 
+### Setup your environment
+
+To setup your environment, please follow all instructions in this documentation : [Environment setup](https://reactnative.dev/docs/environment-setup)
+
 ### Installation
 
 1. Clone the repo
@@ -41,10 +47,6 @@ git clone https://github.com/Online13/pet-marketplace-mobile-challenge.git
 yarn
 ```
 
-### Setup your environment
-
-To setup your environment, please follow all instructions in this documentation : [Environment setup](https://reactnative.dev/docs/environment-setup)
-
 ### Run application
 
 After installing all dependencies, run the app usign
@@ -56,6 +58,8 @@ yarn start
 ### Todo
 
 -  [x] Add http service
+-  [x] Add splash screen
+-  [ ] Add Icon for the app
 -  [ ] Migrate http service to `zustand` implementation
 -  [ ] Handle form validation
 -  [ ] Make dynamic data
