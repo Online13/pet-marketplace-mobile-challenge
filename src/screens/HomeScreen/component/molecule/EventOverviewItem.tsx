@@ -1,6 +1,6 @@
 import { StyleSheet, View, Text, TouchableOpacity, Image } from "react-native";
 import { EventActivityData } from "../../../../type";
-import MaskBackground from "../../../../share/components/atoms/MaskBackground";
+import MaskBackground from "../../../../share/components/atoms/presentation/MaskBackground";
 import { FontAwesome5 } from "@expo/vector-icons";
 import { Font } from "../../../../style";
 import { THEME } from "../../../../data";

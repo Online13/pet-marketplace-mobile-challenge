@@ -1,12 +1,12 @@
 import { StyleSheet, View, Text, ScrollView, TextInput } from "react-native";
 import { THEME } from "../../data";
-import ButtonIcon from "../../share/components/atoms/ButtonIcon";
+import ButtonIcon from "../../share/components/atoms/action/ButtonIcon";
 import { Entypo } from "@expo/vector-icons";
 import { Font, globalStyle, utilitiesStyle } from "../../style";
 import { FontAwesome5 } from "@expo/vector-icons";
-import Section from "../../share/components/atoms/Section";
+import Section from "../../share/components/atoms/presentation/Section";
 import GoBackAppbar from "../../share/components/molecules/GoBackAppbar";
-import ImageInput from "../../share/components/atoms/ImageInput";
+import ImageInput from "../../share/components/atoms/form/ImageInput";
 // type NewType = RouteProp<StackParamList, "/adoption/detail">;
 
 export default function SellServiceScreen() {

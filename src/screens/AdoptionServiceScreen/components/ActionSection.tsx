@@ -1,5 +1,5 @@
 import { StyleSheet, View, GestureResponderEvent } from "react-native";
-import Button from "../../../share/components/atoms/Button";
+import Button from "../../../share/components/atoms/action/Button";
 
 type ActionSectionProps = {
 	onPress: ((event: GestureResponderEvent) => void) | null | undefined;

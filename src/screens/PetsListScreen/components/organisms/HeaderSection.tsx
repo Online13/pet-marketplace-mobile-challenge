@@ -9,9 +9,12 @@ import {
 import { AntDesign } from "@expo/vector-icons";
 import { THEME } from "../../../../data";
 import { useNavigation } from "@react-navigation/native";
-import { useHttpService } from "../../../../share/services/http/provider";
 import { CategoryData } from "../../../../type";
 import PetsListSkeleton from "../molecules/PetsListSkeleton";
+import { shallow } from "zustand/shallow";
+import useHttpStore, {
+	petsSelector,
+} from "../../../../share/stores/useHttpStore";
 
 type HeaderSectionProps = {
 	id: number;
@@ -19,12 +22,12 @@ type HeaderSectionProps = {
 
 export default function HeaderSection({ id }: HeaderSectionProps) {
 	const navigation = useNavigation();
-	const http = useHttpService();
+	const http = useHttpStore(petsSelector, shallow);
 
 	const [categoryData, setCategoryData] = useState<CategoryData>();
 
 	useEffect(() => {
-		http.pet
+		http
 			.getCategoryById(id)
 			.then((category) => {
 				setCategoryData(category);

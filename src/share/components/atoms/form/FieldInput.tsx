@@ -5,7 +5,7 @@ import {
 	TextInput,
 	KeyboardTypeOptions,
 } from "react-native";
-import { THEME } from "../../../data";
+import { THEME } from "../../../../data";
 
 type FieldViewProps = {
 	title: string;

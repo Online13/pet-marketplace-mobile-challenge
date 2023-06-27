@@ -1,6 +1,6 @@
 import { StyleSheet, View } from "react-native";
 import { PropsWithChildren } from "react";
-import { THEME } from "../../../data";
+import { THEME } from "../../../../data";
 
 export default function HeaderLayout({ children }: PropsWithChildren) {
 	return <View style={styles.header}>{children}</View>;

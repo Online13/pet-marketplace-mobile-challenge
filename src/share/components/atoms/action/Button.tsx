@@ -5,8 +5,8 @@ import {
 	ColorValue,
 } from "react-native";
 import AnimatedBox from "./AnimatedBox";
-import { Font } from "../../../style";
-import { THEME } from "../../../data";
+import { Font } from "../../../../style";
+import { THEME } from "../../../../data";
 
 type ButtonProps = {
 	title: string;

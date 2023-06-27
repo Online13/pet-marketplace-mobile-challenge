@@ -1,19 +1,21 @@
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
 import { Entypo } from "@expo/vector-icons";
 import { THEME } from "../../data";
 import { Font } from "../../style";
-import FieldView from "../../share/components/atoms/FieldView";
-import Button from "../../share/components/atoms/Button";
+import FieldView from "../../share/components/atoms/form/FieldView";
+import Button from "../../share/components/atoms/action/Button";
 import { useNavigation } from "@react-navigation/native";
 import { useImagePicker } from "../../share/hooks";
-import AnimatedBox from "../../share/components/atoms/AnimatedBox";
-import { useHttpService } from "../../share/services/http/provider";
+import AnimatedBox from "../../share/components/atoms/action/AnimatedBox";
 import { AntDesign } from "@expo/vector-icons";
 import { useState } from "react";
-import FieldInput from "../../share/components/atoms/FieldInput";
+import FieldInput from "../../share/components/atoms/form/FieldInput";
+import { shallow } from "zustand/shallow";
+import useHttpStore, { authSelector } from "../../share/stores/useHttpStore";
+
 export default function UserScreen() {
 	const navigation = useNavigation();
-	const http = useHttpService();
+	const http = useHttpStore(authSelector, shallow);
 	const [images, pickImage] = useImagePicker();
 	const [edit, setEdit] = useState(false);
 
@@ -22,13 +24,13 @@ export default function UserScreen() {
 	const [location, setLocation] = useState("Manchester");
 
 	const logout = () => {
-		http.auth.logout().then(() => {
+		http.logout().then(() => {
 			navigation.navigate("/login");
 		});
 	};
 
 	return (
-		<View style={styles.root}>
+		<ScrollView style={styles.root}>
 			<View style={styles.header}></View>
 			<View style={styles.main}>
 				<View style={[styles.center, styles.photos]}>
@@ -117,14 +119,14 @@ export default function UserScreen() {
 					/>
 				</View>
 			</View>
-		</View>
+		</ScrollView>
 	);
 }
 
 const styles = StyleSheet.create({
 	root: {
 		flex: 1,
-		backgroundColor: "#f0f0f0",
+		backgroundColor: "#ffffff",
 	},
 	header: {
 		height: 70,
@@ -178,6 +180,7 @@ const styles = StyleSheet.create({
 	card: {
 		backgroundColor: THEME.white,
 		borderRadius: 10,
+		elevation: 2,
 	},
 	field: {
 		width: "100%",

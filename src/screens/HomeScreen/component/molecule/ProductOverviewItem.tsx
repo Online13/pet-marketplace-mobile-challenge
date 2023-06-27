@@ -2,7 +2,7 @@ import { StyleSheet, View, Text, TouchableOpacity, Image } from "react-native";
 import { ProductActivityData } from "../../../../type";
 import { FontAwesome5 } from "@expo/vector-icons";
 import { THEME } from "../../../../data";
-import MaskBackground from "../../../../share/components/atoms/MaskBackground";
+import MaskBackground from "../../../../share/components/atoms/presentation/MaskBackground";
 import { useCallback } from "react";
 import { Font, utilitiesStyle } from "../../../../style";
 import { useNavigation } from "@react-navigation/native";

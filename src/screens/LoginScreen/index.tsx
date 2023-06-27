@@ -6,25 +6,26 @@ import {
 	Pressable,
 	Alert,
 } from "react-native";
-import Logo from "../../share/components/atoms/Logo";
+import Logo from "../../share/components/atoms/presentation/Logo";
 import { Font, utilitiesStyle } from "../../style";
-import Button from "../../share/components/atoms/Button";
+import Button from "../../share/components/atoms/action/Button";
 import { THEME } from "../../data";
 import { useNavigation } from "@react-navigation/native";
-import { useHttpService } from "../../share/services/http/provider";
 import { useState } from "react";
 import useTokenStore from "../../share/stores/useTokenStore";
+import { shallow } from "zustand/shallow";
+import useHttpStore, { authSelector } from "../../share/stores/useHttpStore";
 
 export default function LoginScreen() {
 	const navigation = useNavigation();
-	const http = useHttpService();
+	const http = useHttpStore(authSelector, shallow);
 	const saveToken = useTokenStore((s) => s.setToken);
 
 	const [username, setUserName] = useState("");
 	const [password, setPassword] = useState("");
 
 	const login = () => {
-		http.auth.login(username, password).then((result) => {
+		http.login(username, password).then((result) => {
 			if (result.success) {
 				saveToken(result.token);
 				navigation.navigate("/home", { screen: "/home/overview" });
@@ -42,36 +43,42 @@ export default function LoginScreen() {
 			<View style={styles.logo}>
 				<Logo />
 			</View>
-			<View style={[styles.form]}>
-				<View style={styles.title}>
-					<Text style={[styles.h1, Font.Inter[800]]}>Login</Text>
+			<View style={[utilitiesStyle.center, styles.rootForm]}>
+				<View style={[styles.form]}>
+					<View style={styles.title}>
+						<Text style={[styles.h1, Font.Inter[800]]}>Login</Text>
+						<Text style={[styles.h2, Font.Inter[800]]}>
+							<Text style={{ color: "#6f6f6f" }}>as</Text>{" "}
+							<Text style={{ color: THEME.accent }}>Provider</Text>
+						</Text>
+					</View>
+					<View style={styles.formGroup}>
+						<Text style={[styles.label, Font.Inter[700]]}>username</Text>
+						<TextInput
+							value={username}
+							onChangeText={setUserName}
+							placeholder="username"
+							style={[styles.input]}
+						/>
+					</View>
+					<View style={styles.formGroup}>
+						<Text style={[styles.label, Font.Inter[700]]}>password</Text>
+						<TextInput
+							value={password}
+							onChangeText={setPassword}
+							placeholder="password"
+							secureTextEntry
+							style={[styles.input]}
+						/>
+					</View>
+					<Button title="Login" onPress={login} />
 				</View>
-				<View style={styles.formGroup}>
-					<Text style={[styles.label, Font.Inter[700]]}>username</Text>
-					<TextInput
-						value={username}
-						onChangeText={setUserName}
-						placeholder="username"
-						style={[styles.input]}
-					/>
+				<View style={styles.bottomAction}>
+					<Text style={[Font.Inter[500]]}>Don't have an account ?</Text>
+					<Pressable onPress={goToRegister}>
+						<Text style={[styles.link, Font.Inter[800]]}>Register</Text>
+					</Pressable>
 				</View>
-				<View style={styles.formGroup}>
-					<Text style={[styles.label, Font.Inter[700]]}>password</Text>
-					<TextInput
-						value={password}
-						onChangeText={setPassword}
-						placeholder="password"
-						secureTextEntry
-						style={[styles.input]}
-					/>
-				</View>
-				<Button title="Login" onPress={login} />
-			</View>
-			<View style={styles.bottomAction}>
-				<Text style={[Font.Inter[500]]}>Don't have an account ?</Text>
-				<Pressable onPress={goToRegister}>
-					<Text style={[styles.link, Font.Inter[800]]}>Register</Text>
-				</Pressable>
 			</View>
 		</View>
 	);
@@ -83,18 +90,26 @@ const styles = StyleSheet.create({
 		backgroundColor: "white",
 	},
 	logo: {
-		position: "absolute",
-		top: 0,
-		right: 0,
-		padding: 40,
+		width: "100%",
+		height: 50,
 		justifyContent: "center",
-		alignItems: "center",
+		paddingHorizontal: 20,
 	},
 	title: {
 		paddingBottom: 30,
 	},
 	h1: {
 		fontSize: 30,
+	},
+	h2: {
+		fontSize: 24,
+	},
+	base: {
+		fontSize: 16,
+	},
+	rootForm: {
+		flex: 1,
+		width: "100%",
 	},
 	form: {
 		width: "100%",

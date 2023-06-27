@@ -2,19 +2,22 @@ import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import CategoryItem from "../molecule/CategoryItem";
 import { useEffect, useState } from "react";
 import { CategoryData } from "../../../../type";
-import { useHttpService } from "../../../../share/services/http/provider";
 import { THEME } from "../../../../data";
 import { useNavigation } from "@react-navigation/native";
 import { Font, globalStyle, utilitiesStyle } from "../../../../style";
 import { MaterialIcons } from "@expo/vector-icons";
+import useHttpStore, {
+	petsSelector,
+} from "../../../../share/stores/useHttpStore";
+import { shallow } from "zustand/shallow";
 
 export default function CategorySection() {
-	const http = useHttpService();
+	const http = useHttpStore(petsSelector, shallow);
 	const navigation = useNavigation();
 	const [hotPetList, setHotPetList] = useState<CategoryData[]>([]);
 
 	useEffect(() => {
-		http.pet.getHotCategories().then((categories) => {
+		http.getHotCategories().then((categories) => {
 			setHotPetList(categories);
 		});
 	}, []);

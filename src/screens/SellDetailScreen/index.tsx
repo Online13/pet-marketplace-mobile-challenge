@@ -1,14 +1,14 @@
 import { useNavigation } from "@react-navigation/native";
 import { StyleSheet, View, Text, Image, ScrollView } from "react-native";
 import { THEME } from "../../data";
-import ButtonIcon from "../../share/components/atoms/ButtonIcon";
+import ButtonIcon from "../../share/components/atoms/action/ButtonIcon";
 import { Entypo } from "@expo/vector-icons";
 import { Font, utilitiesStyle } from "../../style";
 import { FontAwesome5 } from "@expo/vector-icons";
-import Section from "../../share/components/atoms/Section";
+import Section from "../../share/components/atoms/presentation/Section";
 import GoBackAppbar from "../../share/components/molecules/GoBackAppbar";
 import UserBrand from "../../share/components/molecules/UserBrand";
-import Button from "../../share/components/atoms/Button";
+import Button from "../../share/components/atoms/action/Button";
 import { useCallback } from "react";
 
 export default function SellDetailScreen() {

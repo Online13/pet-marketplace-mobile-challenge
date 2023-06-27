@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 import GoBackAppbar from "../../../share/components/molecules/GoBackAppbar";
-import ButtonIcon from "../../../share/components/atoms/ButtonIcon";
+import ButtonIcon from "../../../share/components/atoms/action/ButtonIcon";
 import { Entypo } from "@expo/vector-icons";
 import { THEME } from "../../../data";
 

@@ -1,8 +1,18 @@
-
 import { ImageSourcePropType } from "react-native/types";
 
+export type LoginDataType = {
+	success: boolean;
+	message?: string;
+	token: string;
+};
 
-export type PetCategory = "dog" | "cat" | "rabbit" | "hamster" | "fish" | "parakeet";
+export type PetCategory =
+	| "dog"
+	| "cat"
+	| "rabbit"
+	| "hamster"
+	| "fish"
+	| "parakeet";
 
 export type CategoryData = {
 	id: number;
@@ -31,7 +41,7 @@ export type MarketplaceData = {
 	id: number;
 	name: string;
 	location: string;
-}
+};
 
 export type AdoptionActivityData = {
 	id: number;
@@ -62,6 +72,15 @@ export type EventActivityData = {
 	description: string;
 	organizator: string;
 	image: ImageSourcePropType;
-}
+};
 
-export type ActivityData = AdoptionActivityData | ProductActivityData | EventActivityData;
+export type ActivityData =
+	| AdoptionActivityData
+	| ProductActivityData
+	| EventActivityData;
+
+export type PetFood = {
+	id: number;
+	name: string;
+	image: ImageSourcePropType;
+};

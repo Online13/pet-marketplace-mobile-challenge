@@ -1,7 +1,7 @@
 import { StyleSheet, View, Text, Image } from "react-native";
-import { useImagePicker } from "../../hooks";
-import AnimatedBox from "./AnimatedBox";
-import { Font, utilitiesStyle } from "../../../style";
+import { useImagePicker } from "../../../hooks";
+import AnimatedBox from "./../action/AnimatedBox";
+import { Font, utilitiesStyle } from "../../../../style";
 import { Feather } from "@expo/vector-icons";
 
 export default function () {

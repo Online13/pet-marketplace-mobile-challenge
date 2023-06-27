@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
-import ButtonIcon from "../atoms/ButtonIcon";
+import ButtonIcon from "../atoms/action/ButtonIcon";
 import { PropsWithChildren } from "react";
 import { Font, utilitiesStyle } from "../../../style";
 import { useNavigation } from "@react-navigation/native";

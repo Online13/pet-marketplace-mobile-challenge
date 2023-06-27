@@ -2,7 +2,7 @@ import { FlatList, StyleSheet, Text, TextInput, View } from "react-native";
 import { THEME } from "../../data";
 import { Font, utilitiesStyle } from "../../style";
 import { FontAwesome } from "@expo/vector-icons";
-import AnimatedBox from "../../share/components/atoms/AnimatedBox";
+import AnimatedBox from "../../share/components/atoms/action/AnimatedBox";
 import { useCallback } from "react";
 import HeaderSection from "./components/HeaderSection";
 import { useNavigation } from "@react-navigation/native";

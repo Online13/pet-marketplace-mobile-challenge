@@ -1,6 +1,6 @@
 import { StyleSheet, View, Text } from "react-native";
 import { Font } from "../../../style";
-import AnimatedBox from "../atoms/AnimatedBox";
+import AnimatedBox from "../atoms/action/AnimatedBox";
 import { useNavigation } from "@react-navigation/native";
 import { useCallback } from "react";
 

@@ -1,14 +1,14 @@
 import { useNavigation } from "@react-navigation/native";
 import { StyleSheet, View, Text, Image, ScrollView } from "react-native";
 import { THEME } from "../../data";
-import ButtonIcon from "../../share/components/atoms/ButtonIcon";
+import ButtonIcon from "../../share/components/atoms/action/ButtonIcon";
 import { Entypo } from "@expo/vector-icons";
 import { Font, utilitiesStyle } from "../../style";
 import { FontAwesome5 } from "@expo/vector-icons";
-import FieldView from "../../share/components/atoms/FieldView";
+import FieldView from "../../share/components/atoms/form/FieldView";
 import GoBackAppbar from "../../share/components/molecules/GoBackAppbar";
-import Section from "../../share/components/atoms/Section";
-import Button from "../../share/components/atoms/Button";
+import Section from "../../share/components/atoms/presentation/Section";
+import Button from "../../share/components/atoms/action/Button";
 import { useCallback } from "react";
 import UserBrand from "../../share/components/molecules/UserBrand";
 

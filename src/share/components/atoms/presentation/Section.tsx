@@ -1,6 +1,6 @@
 import { PropsWithChildren } from "react";
 import { StyleSheet, View, Text } from "react-native";
-import { Font, utilitiesStyle } from "../../../style";
+import { Font, utilitiesStyle } from "../../../../style";
 
 type SectionProps = PropsWithChildren<{
 	title: string;

@@ -5,10 +5,11 @@ import ActivitySection from "./component/organism/ActivitySection";
 import { ScrollView } from "react-native-gesture-handler";
 import { THEME } from "../../data";
 import { Ionicons } from "@expo/vector-icons";
-import AnimatedBox from "../../share/components/atoms/AnimatedBox";
+import AnimatedBox from "../../share/components/atoms/action/AnimatedBox";
 import ServiceModal from "./component/organism/ServiceModal";
 import { useCallback, useState } from "react";
 import { utilitiesStyle } from "../../style";
+import StoriesSection from "./component/organism/StoriesSection";
 
 export default function HomeScreen() {
 	const [showServiceModal, setShowServiceModal] = useState(false);
@@ -29,6 +30,7 @@ export default function HomeScreen() {
 				contentContainerStyle={styles.root_container}
 			>
 				<HeaderSection />
+				<StoriesSection />
 				<CategorySection />
 				<ActivitySection />
 			</ScrollView>

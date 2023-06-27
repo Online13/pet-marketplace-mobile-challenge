@@ -1,12 +1,12 @@
 import { StyleSheet, View, Text, ImageBackground } from "react-native";
-import HeaderLayout from "../../share/components/atoms/HeaderLayout";
+import HeaderLayout from "../../share/components/atoms/presentation/HeaderLayout";
 import { FlatList } from "react-native-gesture-handler";
 import { CATEGORY_DATA, THEME } from "../../data";
-import ButtonIcon from "../../share/components/atoms/ButtonIcon";
+import ButtonIcon from "../../share/components/atoms/action/ButtonIcon";
 import { AntDesign } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
-import MaskBackground from "../../share/components/atoms/MaskBackground";
-import AnimatedBox from "../../share/components/atoms/AnimatedBox";
+import MaskBackground from "../../share/components/atoms/presentation/MaskBackground";
+import AnimatedBox from "../../share/components/atoms/action/AnimatedBox";
 import { useCallback } from "react";
 
 export default function PetsCategoryScreen() {

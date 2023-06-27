@@ -1,5 +1,5 @@
 import { StyleSheet, View, Text } from "react-native";
-import { Font, globalStyle } from "../../../style";
+import { Font, globalStyle } from "../../../../style";
 import { MaterialIcons } from "@expo/vector-icons";
 
 export default function Logo() {

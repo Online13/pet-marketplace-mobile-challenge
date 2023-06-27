@@ -1,19 +1,22 @@
 import { StyleSheet, View, FlatList } from "react-native";
-import { useHttpService } from "../../../../share/services/http/provider";
 import { useEffect, useState } from "react";
 import { PetData } from "../../../../type";
 import PetOverviewItem from "../molecules/PetOverviewItem";
+import { shallow } from "zustand/shallow";
+import useHttpStore, {
+	petsSelector,
+} from "../../../../share/stores/useHttpStore";
 
 type PetsListSectionProps = {
 	id: number;
 };
 
 export default function PetsListSection({ id }: PetsListSectionProps) {
-	const http = useHttpService();
+	const http = useHttpStore(petsSelector, shallow);
 
 	const [pets, setPets] = useState<PetData[]>([]);
 	useEffect(() => {
-		http.pet
+		http
 			.getPetsByCategory(id)
 			.then((pets) => {
 				setPets(pets);

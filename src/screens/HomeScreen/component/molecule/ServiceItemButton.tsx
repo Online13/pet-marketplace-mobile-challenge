@@ -1,5 +1,5 @@
 import { StyleSheet, Text } from "react-native";
-import AnimatedBox from "../../../../share/components/atoms/AnimatedBox";
+import AnimatedBox from "../../../../share/components/atoms/action/AnimatedBox";
 import { Font, utilitiesStyle } from "../../../../style";
 import { ReactNode } from "react";
 import { useNavigation } from "@react-navigation/native";

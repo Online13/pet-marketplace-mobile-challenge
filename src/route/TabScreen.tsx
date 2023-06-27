@@ -7,6 +7,7 @@ import { THEME } from "../data";
 import UserScreen from "../screens/UserScreen";
 import { FontAwesome } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
+import SearchScreen from "../screens/SearchScreen";
 
 const Tab = createBottomTabNavigator<HomeTabParamList>();
 
@@ -28,13 +29,30 @@ export default function TabScreen() {
 						return (
 							<Ionicons
 								name="newspaper"
-								size={focused ? 30 : 30}
+								size={25}
 								color={focused ? THEME.text : "silver"}
 							/>
 						);
 					},
 				}}
 				component={HomeScreen}
+			/>
+			<Tab.Screen
+				name="/home/search"
+				options={{
+					tabBarShowLabel: false,
+					headerShown: false,
+					tabBarIcon: ({ focused }) => {
+						return (
+							<FontAwesome
+								name="search"
+								size={25}
+								color={focused ? THEME.text : "silver"}
+							/>
+						);
+					},
+				}}
+				component={SearchScreen}
 			/>
 			<Tab.Screen
 				name="/home/chat"
@@ -45,7 +63,7 @@ export default function TabScreen() {
 						return (
 							<MaterialIcons
 								name="message"
-								size={focused ? 35 : 30}
+								size={25}
 								color={focused ? THEME.text : "silver"}
 							/>
 						);
@@ -62,7 +80,7 @@ export default function TabScreen() {
 						return (
 							<FontAwesome
 								name="user"
-								size={focused ? 35 : 30}
+								size={25}
 								color={focused ? THEME.text : "silver"}
 							/>
 						);

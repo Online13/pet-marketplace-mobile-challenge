@@ -1,7 +1,7 @@
 import { StyleSheet, View, Text, TextInput, Pressable } from "react-native";
-import Logo from "../../share/components/atoms/Logo";
+import Logo from "../../share/components/atoms/presentation/Logo";
 import { Font, utilitiesStyle } from "../../style";
-import Button from "../../share/components/atoms/Button";
+import Button from "../../share/components/atoms/action/Button";
 import { THEME } from "../../data";
 import { useNavigation } from "@react-navigation/native";
 
@@ -13,7 +13,7 @@ export default function RegisterScreen() {
 	};
 
 	return (
-		<View style={[styles.root, utilitiesStyle.center]}>
+		<View style={[styles.root]}>
 			<View style={styles.logo}>
 				<Logo />
 			</View>
@@ -65,12 +65,7 @@ const styles = StyleSheet.create({
 		backgroundColor: "white",
 	},
 	logo: {
-		position: "absolute",
-		top: 0,
-		right: 0,
 		padding: 40,
-		justifyContent: "center",
-		alignItems: "center",
 	},
 	title: {
 		paddingBottom: 30,

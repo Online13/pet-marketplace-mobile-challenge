@@ -1,6 +1,6 @@
 import { StyleSheet, GestureResponderEvent } from "react-native";
 import { PropsWithChildren } from "react";
-import AnimatedBox from "../../../../share/components/atoms/AnimatedBox";
+import AnimatedBox from "../../../../share/components/atoms/action/AnimatedBox";
 
 type AnimatedCategoryBoxProps = PropsWithChildren<{
 	onPress: ((event: GestureResponderEvent) => void) | null | undefined;

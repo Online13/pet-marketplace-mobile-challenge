@@ -3,7 +3,7 @@ import { FontAwesome5 } from "@expo/vector-icons";
 import { AdoptionActivityData } from "../../../../type";
 import { THEME } from "../../../../data";
 import { useCallback } from "react";
-import MaskBackground from "../../../../share/components/atoms/MaskBackground";
+import MaskBackground from "../../../../share/components/atoms/presentation/MaskBackground";
 import { useNavigation } from "@react-navigation/native";
 import { Font, globalStyle } from "../../../../style";
 

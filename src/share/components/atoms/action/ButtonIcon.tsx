@@ -6,7 +6,7 @@ import {
 	type ViewStyle,
 	type StyleProp,
 } from "react-native";
-import { THEME } from "../../../data";
+import { THEME } from "../../../../data";
 
 type ButtonIconProps = PropsWithChildren<{
 	onPress: ((event: GestureResponderEvent) => void) | undefined;

@@ -2,8 +2,8 @@ import { NavigatorScreenParams } from "@react-navigation/native";
 
 export type HomeTabParamList = {
 	"/home/overview": undefined;
-	"/home/favorite": undefined;
 	"/home/chat": undefined;
+	"/home/search": undefined;
 	"/home/user": undefined;
 };
 
@@ -31,6 +31,6 @@ export type PathStackParamList = keyof StackParamList;
 
 declare global {
 	namespace ReactNavigation {
-		interface RootParamList extends StackParamList { }
+		interface RootParamList extends StackParamList {}
 	}
 }

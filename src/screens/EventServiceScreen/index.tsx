@@ -2,9 +2,9 @@ import { StyleSheet, View, Text, TextInput } from "react-native";
 import HeaderSection from "./components/HeaderSection";
 import { Font, globalStyle, utilitiesStyle } from "../../style";
 import { FontAwesome5 } from "@expo/vector-icons";
-import Section from "../../share/components/atoms/Section";
+import Section from "../../share/components/atoms/presentation/Section";
 import { THEME } from "../../data";
-import ImageInput from "../../share/components/atoms/ImageInput";
+import ImageInput from "../../share/components/atoms/form/ImageInput";
 
 export default function EventServiceScreen() {
 	return (

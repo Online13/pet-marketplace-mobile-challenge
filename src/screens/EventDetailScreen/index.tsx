@@ -2,9 +2,9 @@ import { StyleSheet, View, Text, Image } from "react-native";
 import HeaderSection from "./components/HeaderSection";
 import { Font } from "../../style";
 import { FontAwesome5 } from "@expo/vector-icons";
-import Section from "../../share/components/atoms/Section";
+import Section from "../../share/components/atoms/presentation/Section";
 import { THEME } from "../../data";
-import Button from "../../share/components/atoms/Button";
+import Button from "../../share/components/atoms/action/Button";
 import { useCallback } from "react";
 import { useNavigation } from "@react-navigation/native";
 

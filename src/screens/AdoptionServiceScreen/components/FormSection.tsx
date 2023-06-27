@@ -2,9 +2,9 @@ import { StyleSheet, View, Text, ScrollView, TextInput } from "react-native";
 import { FontAwesome5 } from "@expo/vector-icons";
 import { Font, globalStyle } from "../../../style";
 import { THEME } from "../../../data";
-import FieldInput from "../../../share/components/atoms/FieldInput";
-import Section from "../../../share/components/atoms/Section";
-import ImageInput from "../../../share/components/atoms/ImageInput";
+import FieldInput from "../../../share/components/atoms/form/FieldInput";
+import Section from "../../../share/components/atoms/presentation/Section";
+import ImageInput from "../../../share/components/atoms/form/ImageInput";
 
 export default function FormSection() {
 	return (

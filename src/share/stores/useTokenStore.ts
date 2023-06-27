@@ -9,10 +9,10 @@ type UseTokeStoreState = {
 
 const useTokenStore = create<UseTokeStoreState>()(
 	persist(
-		(set, get) => ({
+		(set) => ({
 			token: null,
 			setToken: (tk: null | string) => {
-				set({ token: tk })
+				set({ token: tk });
 			}
 		}),
 		{
